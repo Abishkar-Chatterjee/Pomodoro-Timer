@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pomofocus Clone</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="xp-container">
+            <div class="level" id="level-display">Level 1</div>
+            <div class="xp-bar">
+                <div class="xp-fill" id="xp-fill"></div>
+            </div>
+        </div>
+          
+        <h1>Pomodoro Timer</h1>
+
+        <div class="mode-buttons">
+            <div class="active-indicator" id="indicator"></div>
+            <button class="mode-btn active" data-mode="pomodoro">Pomodoro</button>
+            <button class="mode-btn" data-mode="short">Short Break</button>
+            <button class="mode-btn" data-mode="long">Long Break</button>
+        </div>
+
+        <div class="timer">
+            <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+
+        <div class="icon-controls">
+            <button id="icon-toggle" title="Play/Pause">
+                <svg id="playpause-icon" viewBox="0 0 100 100" width="40" height="40">
+                    <path id="playpause-path" d="M 30 20 L 70 50 L 30 80 Z" fill="#fff"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div class="controls">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <button id="reset">Reset</button>
+        </div>
+
+        <div class="settings">
+            <h2>Timer Settings (mins)</h2>
+            <label>Pomodoro: <input type="number" id="pomodoro-time" min="1" max="90" /></label>
+            <label>Short Break: <input type="number" id="short-time" min="1" max="30" /></label>
+            <label>Long Break: <input type="number" id="long-time" min="1" max="60" /></label>
+            <button id="save-settings">Save</button>
+        </div>
+
+        <div class="task-section">
+            <h2>Tasks</h2>
+            <form id="task-form">
+                <input type="text" id="task-input" placeholder="Add a new task..." required />
+                <input type="number" id="task-estimate" placeholder="Est. Pomodoros" min="1" />
+                <button type="submit">Add</button>
+            </form>
+            <ul id="task-list"></ul>
+        </div>
+    </div>
+
+    <audio id="alarm-sound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+    <audio id="click-sound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

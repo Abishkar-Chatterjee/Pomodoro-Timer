@@ -1,0 +1,312 @@
+:root {
+    --bg-pomodoro: #1e1e2f;
+    --bg-short: #1e2f24;
+    --bg-long: #2f1e2e;
+
+    --color-pomodoro: #f87070;
+    --color-short: #58b368;
+    --color-long: #6c5ce7;
+
+    --text-light: #ffffff;
+    --text-dark: #000000;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    transition: background 0.4s, color 0.4s;
+}
+
+body.pomodoro {
+    background-color: var(--bg-pomodoro);
+    color: var(--text-light);
+}
+
+body.short {
+    background-color: var(--bg-short);
+    color: var(--text-light);
+}
+
+body.long {
+    background-color: var(--bg-long);
+    color: var(--text-light);
+}
+
+.container {
+    max-width: 420px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    transition: background 0.4s;
+}
+
+.mode-buttons {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    padding: 5px;
+}
+
+.mode-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    color: inherit;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.active-indicator {
+    position: absolute;
+    height: 100%;
+    width: 33.33%;
+    top: 0;
+    left: 0;
+    background: var(--color-pomodoro);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.timer {
+    font-size: 5rem;
+    margin: 1.5rem 0;
+}
+
+.icon-controls {
+    margin-bottom: 1rem;
+}
+
+#icon-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.controls button {
+    background-color: var(--color-pomodoro);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.settings {
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.settings label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.settings input {
+    width: 50px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.settings button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #58b368;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-section {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+#task-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#task-input,
+#task-estimate {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+#task-input {
+    flex: 1;
+}
+
+#task-estimate {
+    width: 80px;
+}
+
+#task-form button {
+    background: #58b368;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: text-decoration 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.task-actions button {
+    background: none;
+    border: none;
+    color: #f87070;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+
+.task-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.task-name:hover {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    max-width: unset;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 4px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+.task-name:hover+span {
+    display: none;
+}
+
+.xp-container {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.level {
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+    transition: transform 0.4s;
+}
+
+.xp-bar {
+    height: 10px;
+    width: 100%;
+    background: #444;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.xp-fill {
+    height: 100%;
+    width: 0%;
+    background: #f1c40f;
+    transition: width 0.3s;
+}
+
+#task-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+#task-input,
+#task-estimate,
+#task-form button {
+    flex: 1 1 100%;
+}
+
+@media (min-width: 480px) {
+    #task-input {
+        flex: 2;
+    }
+
+    #task-estimate {
+        flex: 1;
+        max-width: 100px;
+    }
+
+    #task-form button {
+        flex: none;
+    }
+}
+
+#task-list li {
+    flex-wrap: wrap;
+    word-break: break-word;
+}
+
+.task-name {
+    max-width: 100%;
+    display: block;
+}
+
+.task-actions {
+    margin-top: 0.5rem;
+}
+
+.bounce {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
