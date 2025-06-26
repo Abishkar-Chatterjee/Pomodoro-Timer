@@ -1,6 +1,6 @@
 # Pomodoro Timer ⏱️ – by Abishkar Chatterjee
 
-A fully featured, responsive Pomodoro timer web app built with **HTML**, **CSS**, and **JavaScript** — no frameworks!
+A fully featured, responsive Pomodoro timer web app built with **HTML**, **CSS**, and **JavaScript**.
 
 ## Features
 
