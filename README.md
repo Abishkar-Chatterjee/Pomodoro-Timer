@@ -25,7 +25,6 @@ A fully featured, responsive Pomodoro timer web app built with **HTML**, **CSS**
 - Earn **XP per completed Pomodoro**
 - XP bar tracks progress toward next level
 - XP required increases per level (e.g., 5, 7, 9, …)
-- Level-up includes **bounce animation** for visual feedback
 - XP and Level persist across sessions
 
 ### UI and Responsiveness
